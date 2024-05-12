@@ -1,0 +1,596 @@
+{
+	"info": {
+		"_postman_id": "41c07208-cce3-4fe8-a6b9-4dbdac484cc9",
+		"name": "Challenge Binar Gold(Mobile)",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "13579232",
+		"_collection_link": "https://www.postman.com/navigation-explorer-78477730/workspace/qa-gold-challenge-vatsa/collection/13579232-41c07208-cce3-4fe8-a6b9-4dbdac484cc9?action=share&source=collection_link&creator=13579232"
+	},
+	"item": [
+		{
+			"name": "Register Account",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(201);",
+							"});",
+							"pm.test(\"Body matches string\", function () {",
+							"    pm.expect(pm.response.text()).to.include(\"shreevatz80@gmail.com\");",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "full_name",
+							"value": "danius",
+							"type": "text"
+						},
+						{
+							"key": "email",
+							"value": "danies98@gmail.com",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "Danies98",
+							"type": "text"
+						},
+						{
+							"key": "phone_number",
+							"value": "18281938",
+							"type": "text"
+						},
+						{
+							"key": "address",
+							"value": "jl. solo raya no.50",
+							"type": "text"
+						},
+						{
+							"key": "image",
+							"type": "file",
+							"src": "yBYZzMSrD/tas spiderman.jpeg"
+						},
+						{
+							"key": "City",
+							"value": "solo",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "https://market-final-project.binaracademy.org/auth/register",
+					"protocol": "https",
+					"host": [
+						"market-final-project",
+						"binaracademy",
+						"org"
+					],
+					"path": [
+						"auth",
+						"register"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Login Account",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"email\": \"danies98@gmail.com\",\n  \"password\": \"Danies98\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://market-final-project.binaracademy.org/auth/login/",
+					"protocol": "https",
+					"host": [
+						"market-final-project",
+						"binaracademy",
+						"org"
+					],
+					"path": [
+						"auth",
+						"login",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Post Seller Product",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "access_token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImRhbmllczk4QGdtYWlsLmNvbSIsImlhdCI6MTY5OTg1NTI5NH0.b82eqWkTvFcr0yQssmP7tQgZXLfGtT0OlaatyKPAUlc",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "name",
+							"value": "Handphone dan Aksesoris ",
+							"type": "text"
+						},
+						{
+							"key": "description",
+							"value": "barang yang bagus    ",
+							"type": "text"
+						},
+						{
+							"key": "base_price",
+							"value": "1000",
+							"type": "text"
+						},
+						{
+							"key": "category_ids",
+							"value": "12",
+							"type": "text"
+						},
+						{
+							"key": "location",
+							"value": "Solo",
+							"type": "text"
+						},
+						{
+							"key": "image",
+							"type": "file",
+							"src": "dW3wdUGPl/hanphone.jpeg"
+						}
+					]
+				},
+				"url": {
+					"raw": "https://market-final-project.binaracademy.org/seller/product",
+					"protocol": "https",
+					"host": [
+						"market-final-project",
+						"binaracademy",
+						"org"
+					],
+					"path": [
+						"seller",
+						"product"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Seller Product",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "access_token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImRhbmllczk4QGdtYWlsLmNvbSIsImlhdCI6MTY5OTg1NTI5NH0.b82eqWkTvFcr0yQssmP7tQgZXLfGtT0OlaatyKPAUlc",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "name",
+							"value": "Botol ",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "description",
+							"value": "botol yang bagus",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "base_price",
+							"value": "1000",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "category_ids",
+							"value": "1",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "location",
+							"value": "Bandung",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "image",
+							"type": "file",
+							"src": [],
+							"disabled": true
+						}
+					]
+				},
+				"url": {
+					"raw": "https://market-final-project.binaracademy.org/seller/product",
+					"protocol": "https",
+					"host": [
+						"market-final-project",
+						"binaracademy",
+						"org"
+					],
+					"path": [
+						"seller",
+						"product"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Seller product",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "access_token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImRhbmllczk4QGdtYWlsLmNvbSIsImlhdCI6MTY5OTg1NTI5NH0.b82eqWkTvFcr0yQssmP7tQgZXLfGtT0OlaatyKPAUlc",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "name",
+							"value": " ",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "description",
+							"value": "",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "base_price",
+							"value": "",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "category_ids",
+							"value": "1",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "location",
+							"value": "Jakarta",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "image",
+							"value": "",
+							"type": "text",
+							"disabled": true
+						}
+					]
+				},
+				"url": {
+					"raw": "https://market-final-project.binaracademy.org/seller/product/97387",
+					"protocol": "https",
+					"host": [
+						"market-final-project",
+						"binaracademy",
+						"org"
+					],
+					"path": [
+						"seller",
+						"product",
+						"97387"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Seller id product",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "access_token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImRhbmllczk4QGdtYWlsLmNvbSIsImlhdCI6MTY5OTg1NTI5NH0.b82eqWkTvFcr0yQssmP7tQgZXLfGtT0OlaatyKPAUlc",
+						"type": "text"
+					},
+					{
+						"key": "id",
+						"value": "1",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"url": {
+					"raw": "https://market-final-project.binaracademy.org/seller/product/97387",
+					"protocol": "https",
+					"host": [
+						"market-final-project",
+						"binaracademy",
+						"org"
+					],
+					"path": [
+						"seller",
+						"product",
+						"97387"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Category",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://market-final-project.binaracademy.org/seller/category/",
+					"protocol": "https",
+					"host": [
+						"market-final-project",
+						"binaracademy",
+						"org"
+					],
+					"path": [
+						"seller",
+						"category",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete Product",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "access_token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InNocmVldmF0ejk1QGdtYWlsLmNvbSIsImlhdCI6MTY5OTY4OTg2MH0.3i-gxPPvy7DeOlR3fOhnrgC7RsJhj-dlXT0tke2yAwY",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://market-final-project.binaracademy.org/seller/product/96885",
+					"protocol": "https",
+					"host": [
+						"market-final-project",
+						"binaracademy",
+						"org"
+					],
+					"path": [
+						"seller",
+						"product",
+						"96885"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Buyer Product",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://market-final-project.binaracademy.org/buyer/product",
+					"protocol": "https",
+					"host": [
+						"market-final-project",
+						"binaracademy",
+						"org"
+					],
+					"path": [
+						"buyer",
+						"product"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Buyer Product ID",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://market-final-project.binaracademy.org/buyer/product/1",
+					"protocol": "https",
+					"host": [
+						"market-final-project",
+						"binaracademy",
+						"org"
+					],
+					"path": [
+						"buyer",
+						"product",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Buyer Order",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "access_token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImRhbmllbDk5QGdtYWlsLmNvbSIsImlhdCI6MTY5OTg1NzE0NX0.GMTfJfu9g7TJeZx_6sGz1Fe0ZIFxXuIUKgKPbIL43DQ",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"product_id\": 97387,\n  \"bid_price\": 1000000\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://market-final-project.binaracademy.org/buyer/order",
+					"protocol": "https",
+					"host": [
+						"market-final-project",
+						"binaracademy",
+						"org"
+					],
+					"path": [
+						"buyer",
+						"order"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Buyer Order",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "access_token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImRhbmllbDk5QGdtYWlsLmNvbSIsImlhdCI6MTY5OTg1NzE0NX0.GMTfJfu9g7TJeZx_6sGz1Fe0ZIFxXuIUKgKPbIL43DQ",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://market-final-project.binaracademy.org/buyer/order",
+					"protocol": "https",
+					"host": [
+						"market-final-project",
+						"binaracademy",
+						"org"
+					],
+					"path": [
+						"buyer",
+						"order"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Buyer Order ID",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "access_token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImRhbmllbDk5QGdtYWlsLmNvbSIsImlhdCI6MTY5OTg1NzE0NX0.GMTfJfu9g7TJeZx_6sGz1Fe0ZIFxXuIUKgKPbIL43DQ",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "https://market-final-project.binaracademy.org/buyer/order/47008",
+					"protocol": "https",
+					"host": [
+						"market-final-project",
+						"binaracademy",
+						"org"
+					],
+					"path": [
+						"buyer",
+						"order",
+						"47008"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update order ID",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "access_token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImRhbmllbDk5QGdtYWlsLmNvbSIsImlhdCI6MTY5OTg1NzE0NX0.GMTfJfu9g7TJeZx_6sGz1Fe0ZIFxXuIUKgKPbIL43DQ",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://market-final-project.binaracademy.org/buyer/order/47008",
+					"protocol": "https",
+					"host": [
+						"market-final-project",
+						"binaracademy",
+						"org"
+					],
+					"path": [
+						"buyer",
+						"order",
+						"47008"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

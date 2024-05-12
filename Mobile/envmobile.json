@@ -1,0 +1,39 @@
+{
+	"id": "d1d665c9-cf06-45ac-b49e-eafa2f224dc4",
+	"name": "SIT",
+	"values": [
+		{
+			"key": "base_url",
+			"value": "https://secondhand.binaracademy.org",
+			"type": "default",
+			"enabled": true
+		},
+		{
+			"key": "base.url",
+			"value": "https://market-final-project.binaracademy.org/",
+			"type": "default",
+			"enabled": true
+		},
+		{
+			"key": "random_computer_product_name",
+			"value": "",
+			"type": "any",
+			"enabled": true
+		},
+		{
+			"key": "random_product_description",
+			"value": "",
+			"type": "any",
+			"enabled": true
+		},
+		{
+			"key": "random_product_price",
+			"value": "",
+			"type": "any",
+			"enabled": true
+		}
+	],
+	"_postman_variable_scope": "environment",
+	"_postman_exported_at": "2023-11-13T10:28:13.234Z",
+	"_postman_exported_using": "Postman/10.20.0-231018-1251"
+}
